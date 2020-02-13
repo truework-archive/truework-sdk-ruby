@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.4
+before_install:
+  # updates Bundler to Bundler 2
+  - gem install bundler
+before_script:
+  - ./bin/setup
+script:
+  - rake spec
