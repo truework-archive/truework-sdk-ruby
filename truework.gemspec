@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['ruby-sdk@truework.com']
 
   spec.summary       = 'Ruby bindings for the Truework API.'
-  spec.homepage      = 'https://www.github.com/truework/truework-ruby-sdk'
+  spec.homepage      = 'https://www.github.com/truework/truework-sdk-ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
