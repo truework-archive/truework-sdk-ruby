@@ -1,0 +1,27 @@
+# frozen_string_literal: true
+
+require 'truework/resources/document'
+require 'truework/resources/target'
+require 'truework/resources/turnaround_time'
+
+module Truework
+  class VerificationRequest < APIResource
+    extend APIOperations::Create
+    extend APIOperations::List
+    extend APIOperations::Retrieve
+
+    attribute :id, Types::String
+    attribute? :type, Types::String
+    attribute :created, Types::Params::DateTime
+    attribute? :state, Types::String
+    attribute? :price, Price
+    attribute? :turnaround_time, TurnaroundTime
+    attribute? :permissible_purpose, Types::String
+    attribute? :target, Target
+    attribute? :documents, Types::Array.of(Document)
+
+    def self.resource_path
+      '/verification-requests/'
+    end
+  end
+end

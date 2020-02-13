@@ -6,5 +6,6 @@ before_install:
   - gem install bundler
 before_script:
   - ./bin/setup
+  - rubocop
 script:
   - rake spec

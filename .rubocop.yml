@@ -1,8 +1,15 @@
 AllCops:
   TargetRubyVersion: 2.4
-Metrics/LineLength:
+Metrics:
+  Enabled: true
+  Exclude:
+    - lib/truework/request.rb
+Layout/LineLength:
   Max: 120
 Metrics/BlockLength:
   Enabled: true
   Exclude:
-    - test/**/*
+    - spec/**/*
+    - truework.gemspec
+Style/Documentation:
+  Enabled: false

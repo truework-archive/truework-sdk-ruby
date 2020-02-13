@@ -1,8 +1,6 @@
-# Truework Ruby  SDK
+# Truework Ruby SDK
 
-This repository provides an SDK to use the ![API from Truework](https://www.truework.com/docs/api/).
-
-Code in this repository is licensed under the MIT license, see LICENSE for details.
+A first party software development kit (SDK) for the [Truework API](https://www.truework.com/docs/api/).
 
 ## Installation
 
@@ -20,19 +18,53 @@ Or install it yourself as:
 
     $ gem install truework
 
+## Requirements
+
+- Ruby 2.4+
+
 ## Usage
 
-TODO: Write usage instructions here
+The library needs to be configured with your verifier account's api key. Set `Truework.api_key` to its
+value:
+
+```ruby
+require 'truework'
+
+Truework.api_key = 'myTrueworkToken'
+
+# get the first 10 companies that match the query "International"
+
+Truework::Company.list(q: 'International', limit: 10, offset: 0)
+```
+
+### Versioning
+Pinning the client to a specific [version](https://www.truework.com/docs/api#versioning) of the Truework API is heavily recommended.
+If not set, the latest version of the API will be used.
+
+```ruby
+Truework.api_version = '2019-10-15'
+```
+
+### Configuring CA Bundles
+
+By default, the library will use its own internal bundle of known CA
+certificates, but it's possible to configure your own:
+
+```ruby
+Truework.ca_bundle_path = 'path/to/ca/bundle'
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo and running `bin/setup`, tests can be run using the following command:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```bash
+$ bundle exec rake spec
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/truework.
+Bug reports and pull requests are welcome on GitHub at https://github.com/truework/truework-sdk-ruby.
 
 ## License
 
