@@ -3,7 +3,7 @@
     "next": "https://api.truework.com/companies/?limit=2&offset=2&q=International",
     "results": [
         {
-            "id": 745,
+            "id": "745",
             "name": "International Academy of Design and Technology",
             "domain": "iadt.edu"
         },
