@@ -5,7 +5,7 @@ module Truework
     extend APIOperations::List
 
     attribute :name, Types::String
-    attribute? :id, Types::Integer
+    attribute? :id, Types::Coercible::Integer
     attribute? :domain, Types::String
 
     def self.resource_path
