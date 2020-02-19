@@ -204,6 +204,7 @@ describe Truework::Report do
               status: 'inactive',
               hired_date: Date.new(2017, 8, 8),
               end_of_employment: Date.new(2019, 8, 8),
+              social_security_number: '***-**-9999',
               earnings: [
                 Truework::Earnings.new(
                   year: 2019,
