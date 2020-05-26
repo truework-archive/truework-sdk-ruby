@@ -1,0 +1,28 @@
+{
+  "id": "AAAAAAAAQnIAAYd5YHFVOm8PNX2ecFbEjqV__upOKUE8YE_IK2Gw2CAN",
+  "state": "cancelled",
+  "created": "2008-09-15T15:53:00Z",
+  "type": "employment-income",
+  "price": {
+    "amount": "0.00",
+    "currency": "USD"
+  },
+  "turnaround_time": {
+  },
+  "permissible_purpose": "credit-application",
+  "cancellation_details": "blah",
+  "cancellation_reason": "other",
+  "target": {
+    "first_name": "Joe",
+    "last_name": "Smith",
+    "contact_email": "joesmith@example.org",
+    "company": {
+      "name": "Future Widget LLC"
+    }
+  },
+  "documents": [
+    {
+      "filename": "employee_authorization.pdf"
+    }
+  ]
+}

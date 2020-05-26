@@ -109,6 +109,45 @@ describe Truework::VerificationRequest do
     end
   end
 
+  describe '.cancel' do
+    let(:id) { 'AAAAAAAAQnIAAYd5YHFVOm8PNX2ecFbEjqV__upOKUE8YE_IK2Gw2CAN' }
+    subject { Truework::VerificationRequest.cancel(id, 'other', 'blah') }
+
+    context 'when successful' do
+      before do
+        stub_request(:put, "#{Truework.api_base}#{Truework::VerificationRequest.resource_path}#{id}/cancel/")
+          .to_return(
+            status: 200,
+            body: fixture('verification_requests/verification_request_cancel_response.json')
+          )
+      end
+      it 'should return a VerificationRequest object' do
+        expect(subject).to be_a(Truework::VerificationRequest)
+      end
+      it 'should deserialize the response correctly' do
+        expected = Truework::VerificationRequest.new(
+          id: id,
+          state: 'cancelled',
+          created: DateTime.new(2008, 9, 15, 15, 53, 0),
+          cancellation_reason: 'other',
+          cancellation_details: 'blah',
+          type: 'employment-income',
+          permissible_purpose: 'credit-application',
+          price: Truework::Price.new(amount: 0.00, currency: 'USD'),
+          turnaround_time: Truework::TurnaroundTime.new,
+          target: Truework::Target.new(
+            company: Truework::Company.new(name: 'Future Widget LLC'),
+            first_name: 'Joe',
+            last_name: 'Smith',
+            contact_email: 'joesmith@example.org'
+          ),
+          documents: [Truework::Document.new(filename: 'employee_authorization.pdf')]
+        )
+        expect(subject).to eq(expected)
+      end
+    end
+  end
+
   describe '.retrieve' do
     let(:id) { 'AAAAAAAAQnIAAYd5YHFVOm8PNX2ecFbEjqV__upOKUE8YE_IK2GwSQTP' }
     subject { Truework::VerificationRequest.retrieve(id) }
