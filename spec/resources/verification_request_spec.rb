@@ -112,7 +112,7 @@ describe Truework::VerificationRequest do
   describe '.cancel' do
     let(:id) { 'AAAAAAAAQnIAAYd5YHFVOm8PNX2ecFbEjqV__upOKUE8YE_IK2Gw2CAN' }
     let(:cancellation_reason) { 'other' }
-    let(:cancellation_details) { The verification request is no longer needed.' }
+    let(:cancellation_details) { 'The verification request is no longer needed.' }
     subject { Truework::VerificationRequest.cancel(id, cancellation_reason, cancellation_details) }
 
     context 'when successful' do
@@ -140,7 +140,7 @@ describe Truework::VerificationRequest do
           state: 'cancelled',
           created: DateTime.new(2008, 9, 15, 15, 53, 0),
           cancellation_reason: 'other',
-          cancellation_details: 'free form text',
+          cancellation_details: 'The verification request is no longer needed.',
           type: 'employment-income',
           permissible_purpose: 'credit-application',
           price: Truework::Price.new(amount: 0.00, currency: 'USD'),
