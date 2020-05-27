@@ -10,7 +10,7 @@
   "turnaround_time": {
   },
   "permissible_purpose": "credit-application",
-  "cancellation_details": "blah",
+  "cancellation_details": "free form text",
   "cancellation_reason": "other",
   "target": {
     "first_name": "Joe",

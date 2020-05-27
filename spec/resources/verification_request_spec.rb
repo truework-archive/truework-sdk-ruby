@@ -121,16 +121,18 @@ describe Truework::VerificationRequest do
             body: fixture('verification_requests/verification_request_cancel_response.json')
           )
       end
+
       it 'should return a VerificationRequest object' do
         expect(subject).to be_a(Truework::VerificationRequest)
       end
+
       it 'should deserialize the response correctly' do
         expected = Truework::VerificationRequest.new(
           id: id,
           state: 'cancelled',
           created: DateTime.new(2008, 9, 15, 15, 53, 0),
           cancellation_reason: 'other',
-          cancellation_details: 'blah',
+          cancellation_details: 'free form text',
           type: 'employment-income',
           permissible_purpose: 'credit-application',
           price: Truework::Price.new(amount: 0.00, currency: 'USD'),
