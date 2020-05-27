@@ -112,7 +112,7 @@ describe Truework::VerificationRequest do
   describe '.cancel' do
     let(:id) { 'AAAAAAAAQnIAAYd5YHFVOm8PNX2ecFbEjqV__upOKUE8YE_IK2Gw2CAN' }
     let(:cancellation_reason) { 'other' }
-    let(:cancellation_details) { 'free form text' }
+    let(:cancellation_details) { The verification request is no longer needed.' }
     subject { Truework::VerificationRequest.cancel(id, cancellation_reason, cancellation_details) }
 
     context 'when successful' do
