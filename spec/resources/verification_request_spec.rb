@@ -111,11 +111,19 @@ describe Truework::VerificationRequest do
 
   describe '.cancel' do
     let(:id) { 'AAAAAAAAQnIAAYd5YHFVOm8PNX2ecFbEjqV__upOKUE8YE_IK2Gw2CAN' }
-    subject { Truework::VerificationRequest.cancel(id, 'other', 'blah') }
+    let(:cancellation_reason) { 'other' }
+    let(:cancellation_details) { 'free form text' }
+    subject { Truework::VerificationRequest.cancel(id, cancellation_reason, cancellation_details) }
 
     context 'when successful' do
       before do
         stub_request(:put, "#{Truework.api_base}#{Truework::VerificationRequest.resource_path}#{id}/cancel/")
+          .with(
+            body: {
+              'cancellation_reason' => cancellation_reason,
+              'cancellation_details' => cancellation_details
+            }
+          )
           .to_return(
             status: 200,
             body: fixture('verification_requests/verification_request_cancel_response.json')
