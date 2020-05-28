@@ -1,0 +1,27 @@
+name: Ruby
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      with:
+        ruby-version: 2.4
+    - name: Install dependencies
+      run: gem install bundler
+    - name: Run Setup
+      run: ./bin/setup
+    - name: Robocop Check
+      run: rubocop
+    - name: Application Tests
+      run: rake spec
