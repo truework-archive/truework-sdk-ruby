@@ -10,7 +10,7 @@ module Truework
     attribute :last_name, Types::String
     attribute :status, Types::String
     attribute? :hired_date, Types::JSON::Date
-    attribute? :end_of_employment, Types::JSON::Date
+    attribute? :termination_date, Types::JSON::Date
     attribute :social_security_number, Types::String
     attribute? :earnings, Types::Array.of(Earnings)
     attribute? :positions, Types::Array.of(Position)

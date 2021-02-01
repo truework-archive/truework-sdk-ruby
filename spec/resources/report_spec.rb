@@ -109,7 +109,7 @@ describe Truework::Report do
           expect(subject.last_name).to eq('Last')
           expect(subject.status).to eq('inactive')
           expect(subject.hired_date).to eq(Date.new(2017, 8, 8))
-          expect(subject.end_of_employment).to eq(Date.new(2019, 8, 8))
+          expect(subject.termination_date).to eq(Date.new(2019, 8, 8))
         end
 
         context 'nested attributes' do
@@ -203,7 +203,7 @@ describe Truework::Report do
               last_name: 'Last',
               status: 'inactive',
               hired_date: Date.new(2017, 8, 8),
-              end_of_employment: Date.new(2019, 8, 8),
+              termination_date: Date.new(2019, 8, 8),
               social_security_number: '***-**-9999',
               earnings: [
                 Truework::Earnings.new(
@@ -245,8 +245,14 @@ describe Truework::Report do
               salary: Truework::Salary.new(
                 gross_pay: '30000.00',
                 pay_frequency: 'annually',
-                hours_per_week: 40
-              )
+                hours_per_week: 40,
+                reduced_covid: 'no'
+              ),
+              respondent: Truework::Respondent.new(
+                full_name: 'first last',
+                title: 'some title'
+              ),
+              additional_notes: 'some free form text'
             )
           )
           expect(subject).to eq(expected)
