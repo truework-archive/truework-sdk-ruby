@@ -16,6 +16,7 @@ module Truework
     attribute :created, Types::Params::DateTime
     attribute? :state, Types::String
     attribute? :price, Price
+    attribute? :loan_id, Types::String
     attribute? :turnaround_time, TurnaroundTime
     attribute? :cancellation_details, Types::String
     attribute? :cancellation_reason, Types::String
