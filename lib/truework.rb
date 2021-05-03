@@ -15,7 +15,6 @@ require 'truework/resources'
 require 'truework/environment'
 
 module Truework
-  DEFAULT_CA_BUNDLE_PATH = "#{__dir__}/truework/data/ca-certificates.crt"
   PRODUCTION_URL = 'https://api.truework.com'
   SANDBOX_URL = 'https://api.truework-sandbox.com'
 

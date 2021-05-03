@@ -31,10 +31,7 @@ module Truework
       request = build_request(method, uri, params)
       http = Net::HTTP.new(uri.host, uri.port)
 
-      if uri.scheme == 'https'
-        http.use_ssl = true
-        http.ca_file = Truework::DEFAULT_CA_BUNDLE_PATH
-      end
+      http.use_ssl = true if uri.scheme == 'https'
 
       response = http.request(request)
       handle_errors(response)
