@@ -19,9 +19,6 @@ module Truework
   PRODUCTION_URL = 'https://api.truework.com'
   SANDBOX_URL = 'https://api.truework-sandbox.com'
 
-  @ca_bundle_path = DEFAULT_CA_BUNDLE_PATH
-  @ca_store = nil
-
   class << self
     attr_reader :api_base
     attr_reader :api_key

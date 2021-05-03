@@ -53,15 +53,6 @@ purposes.
 Truework.configure('myTrueworkSandboxToken', environment: Truework::Environment::SANDBOX)
 ```
 
-### Configuring CA Bundles
-
-By default, the library will use its own internal bundle of known CA
-certificates, but it's possible to configure your own:
-
-```ruby
-Truework.ca_bundle_path = 'path/to/ca/bundle'
-```
-
 ## Development
 
 After checking out the repo and running `bin/setup`, tests can be run using the following command:
