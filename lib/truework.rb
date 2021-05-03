@@ -30,7 +30,9 @@ module Truework
       @api_base = get_api_base(api_base, environment)
     end
 
-    private_class_method def get_api_base(api_base, environment)
+    private
+
+    def get_api_base(api_base, environment)
       if environment && api_base
         raise ClientException, 'Cannot configure client with both environment and api_base defined'
       end
