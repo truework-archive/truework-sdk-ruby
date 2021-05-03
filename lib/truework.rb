@@ -27,15 +27,20 @@ module Truework
     def configure(api_key, api_version: nil, environment: nil, api_base: nil)
       @api_key = api_key
       @api_version = api_version
+      @api_base = get_api_base(api_base, environment)
+    end
 
+    private_class_method def get_api_base(api_base, environment)
       if environment && api_base
-        raise ClientException, "Cannot configure client with both environment and api_base defined"
-      elsif api_base
-        @api_base = api_base
+        raise ClientException, 'Cannot configure client with both environment and api_base defined'
+      end
+
+      if api_base
+        api_base
       elsif environment == Environment::SANDBOX
-        @api_base = SANDBOX_URL
+        SANDBOX_URL
       else
-        @api_base = PRODUCTION_URL
+        PRODUCTION_URL
       end
     end
   end

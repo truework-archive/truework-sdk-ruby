@@ -43,7 +43,7 @@ describe Truework::HTTPRequest do
       end
 
       it 'should use the sandbox url' do
-        expect(url).to eq("https://api.truework-sandbox.com/some_path/")
+        expect(url).to eq('https://api.truework-sandbox.com/some_path/')
       end
     end
   end
