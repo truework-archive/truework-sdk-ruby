@@ -18,11 +18,11 @@ RSpec.configure do |config|
   end
 
   config.before :each do
-    Truework.api_key = 'some_token'
+    Truework.configure('some_token')
   end
 
   config.after :each do
-    Truework.api_version = nil
+    Truework.configure('some_token')
   end
 end
 

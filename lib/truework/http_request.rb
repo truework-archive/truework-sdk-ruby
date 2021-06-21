@@ -31,10 +31,7 @@ module Truework
       request = build_request(method, uri, params)
       http = Net::HTTP.new(uri.host, uri.port)
 
-      if uri.scheme == 'https'
-        http.use_ssl = true
-        http.ca_file = Truework::DEFAULT_CA_BUNDLE_PATH
-      end
+      http.use_ssl = true if uri.scheme == 'https'
 
       response = http.request(request)
       handle_errors(response)
@@ -78,7 +75,7 @@ module Truework
       body
     end
 
-    # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+    # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
     def build_request(method, uri, params)
       klass = case method
               when :get
@@ -108,6 +105,6 @@ module Truework
 
       req
     end
-    # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+    # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
   end
 end

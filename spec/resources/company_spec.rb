@@ -57,7 +57,7 @@ describe Truework::Company do
     context 'an there is an invalid token' do
       subject { Truework::Company.list }
       before do
-        Truework.api_key = 'invalid'
+        Truework.configure('invalid')
         stub_request(:get, "#{Truework.api_base}#{Truework::Company.resource_path}")
           .to_return(
             status: 400,

@@ -24,13 +24,12 @@ Or install it yourself as:
 
 ## Usage
 
-The library needs to be configured with your verifier account's api key. Set `Truework.api_key` to its
-value:
+The library needs to be configured with your verifier account's api key. Call `Truework.configure` with its value:
 
 ```ruby
 require 'truework'
 
-Truework.api_key = 'myTrueworkToken'
+Truework.configure('myTrueworkToken')
 
 # get the first 10 companies that match the query "International"
 
@@ -42,16 +41,16 @@ Pinning the client to a specific [version](https://www.truework.com/docs/api#ver
 If not set, the latest version of the API will be used.
 
 ```ruby
-Truework.api_version = '2019-10-15'
+Truework.configure('myTrueworkToken', api_version: '2019-10-15')
 ```
 
-### Configuring CA Bundles
+### Sandbox
 
-By default, the library will use its own internal bundle of known CA
-certificates, but it's possible to configure your own:
+The SDK can be configured to interact with the Truework Sandbox instead of the production environment for testing
+purposes.
 
 ```ruby
-Truework.ca_bundle_path = 'path/to/ca/bundle'
+Truework.configure('myTrueworkSandboxToken', environment: Truework::Environment::SANDBOX)
 ```
 
 ## Development

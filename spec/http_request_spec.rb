@@ -29,11 +29,21 @@ describe Truework::HTTPRequest do
 
     context 'when the api version is set' do
       before do
-        Truework.api_version = '2019-10-15'
+        Truework.configure('some_token', api_version: '2019-10-15')
       end
 
       it 'should add the version to the accept header' do
         expect(subject['Accept']).to eq("application/json; version=#{Truework.api_version}")
+      end
+    end
+
+    context 'when the SANDBOX environment is used' do
+      before do
+        Truework.configure('some_token', environment: Truework::Environment::SANDBOX)
+      end
+
+      it 'should use the sandbox url' do
+        expect(url).to eq('https://api.truework-sandbox.com/some_path/')
       end
     end
   end
