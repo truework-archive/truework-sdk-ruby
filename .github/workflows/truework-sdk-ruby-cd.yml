@@ -1,12 +1,12 @@
-name: CI
+name: CD
 
 on:
-  pull_request:
-    branches: [ '**' ]
+  push:
+    branches: [ master ]
 
 jobs:
-  test:
-    name: Pre-release
+  release:
+    name: Release
 
     runs-on: ubuntu-latest
 
@@ -16,12 +16,10 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.4
-    - name: Install dependencies
+    - name: Install Ruby dependencies
       run: gem install bundler
     - name: Run Setup
       run: ./bin/setup
-    - name: Lint
-      run: rubocop
     - name: Test
       run: rake spec
     - name: Setup Node.js
@@ -30,8 +28,8 @@ jobs:
         node-version: 12
     - name: Install Node.js dependencies
       run: npm install
-    - name: Release (Dry Run)
+    - name: Release
       env:
         GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_AUTH_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run release:dryRun
+      run: npm run release

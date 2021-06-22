@@ -63,7 +63,29 @@ $ bundle exec rake spec
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/truework/truework-sdk-ruby.
+### Issues
+
+If you run into problems, or simply have a question, feel free to [open an
+issue](https://github.com/truework/truework-sdk-ruby/issues/new)!
+
+### Commiting
+
+This repo uses [commitizen](https://github.com/commitizen/cz-cli) to nicely
+format commit messages. Upon making edits, stage your changes and simply run
+`git commit` to enter the commitizen UI in your terminal.
+
+**Note:** if you are not prompted with the commitizen UI, run `npm run prepare` to install the git hook.
+
+### Releases
+
+This project is versioned and published automatically using
+[semantic-release](https://github.com/semantic-release/semantic-release) and
+[semantic-release-rubygem](https://github.com/Gusto/semantic-release-rubygem). Via a
+GitHub Action, `semantic-release` will use the commit message pattern provided
+by `commitizen` to automatically version the package. It will then publish to
+RubyGems, as well as create a new
+[release](https://github.com/truework/truework-sdk-ruby/releases) here in the
+main repo.
 
 ## License
 
