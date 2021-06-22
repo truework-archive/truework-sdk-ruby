@@ -6,6 +6,8 @@ pkg/*
 .rvmrc
 .ruby-version
 .ruby-gemset
+.rspec_status
 .yardoc
 doc
 .idea
+node_modules

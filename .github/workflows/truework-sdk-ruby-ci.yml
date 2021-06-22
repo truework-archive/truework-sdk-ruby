@@ -1,13 +1,12 @@
-name: Ruby
+name: CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ '**' ]
 
 jobs:
   test:
+    name: Pre-release
 
     runs-on: ubuntu-latest
 
@@ -21,7 +20,7 @@ jobs:
       run: gem install bundler
     - name: Run Setup
       run: ./bin/setup
-    - name: Robocop Check
+    - name: Lint
       run: rubocop
-    - name: Application Tests
+    - name: Test
       run: rake spec

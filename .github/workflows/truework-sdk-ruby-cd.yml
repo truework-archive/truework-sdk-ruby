@@ -1,0 +1,35 @@
+name: CD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release:
+    name: Release
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.4
+    - name: Install Ruby dependencies
+      run: gem install bundler
+    - name: Run Setup
+      run: ./bin/setup
+    - name: Test
+      run: rake spec
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: Install Node.js dependencies
+      run: npm install
+    - name: Release
+      env:
+        GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_AUTH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npm run release

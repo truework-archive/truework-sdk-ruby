@@ -1,0 +1,46 @@
+{
+  "name": "truework-sdk-ruby",
+  "version": "2.0.0",
+  "description": "This is just for releasing the gem",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "release": "semantic-release",
+    "release:dryRun": "semantic-release -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truework/truework-sdk-ruby.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/truework/truework-sdk-ruby/issues"
+  },
+  "homepage": "https://github.com/truework/truework-sdk-ruby#readme",
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^17.4.4",
+    "semantic-release-rubygem": "^1.2.0"
+  },
+  "release": {
+    "plugins": [
+      "semantic-release-rubygem",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ]
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {}
+}
