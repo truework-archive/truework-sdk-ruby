@@ -1,3 +1,5 @@
+⚠️ This SDK version is deprecated. The SDK does work, but is not maintained and new features may not be supported. For now, we encourage our customers to integrate directly against the API using https://truework.com/docs. ⚠️
+
 # Truework Ruby SDK
 
 A first party software development kit (SDK) for the [Truework API](https://www.truework.com/docs/api/).
