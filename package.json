@@ -24,7 +24,7 @@
   "devDependencies": {
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "semantic-release": "^17.4.4",
+    "semantic-release": "^19.0.3",
     "semantic-release-rubygem": "^1.2.0",
     "husky": "^6.0.0"
   },
