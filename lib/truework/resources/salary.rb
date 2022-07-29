@@ -5,5 +5,6 @@ module Truework
     attribute :gross_pay, Types::JSON::Decimal
     attribute? :pay_frequency, Types::String
     attribute? :hours_per_week, Types::Coercible::Integer
+    attribute? :reduced_covid, Types::String
   end
 end

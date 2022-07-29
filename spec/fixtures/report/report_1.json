@@ -22,7 +22,7 @@
     "last_name": "Last",
     "status": "inactive",
     "hired_date": "2017-08-08",
-    "end_of_employment": "2019-08-08",
+    "termination_date": "2019-08-08",
     "social_security_number": "***-**-9999",
     "earnings": [
       {
@@ -64,7 +64,13 @@
     "salary": {
       "gross_pay": "30000.00",
       "pay_frequency": "annually",
-      "hours_per_week": "40"
-    }
+      "hours_per_week": "40",
+      "reduced_covid": "no"
+    },
+    "respondent": {
+      "title": "some title",
+      "full_name": "first last"
+    },
+    "additional_notes": "some free form text"
   }
 }
