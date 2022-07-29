@@ -64,7 +64,8 @@
     "salary": {
       "gross_pay": "30000.00",
       "pay_frequency": "annually",
-      "hours_per_week": "40"
+      "hours_per_week": "40",
+      "months_per_year": "9.5"
     }
   }
 }

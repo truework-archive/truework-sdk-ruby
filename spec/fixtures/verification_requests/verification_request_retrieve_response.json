@@ -8,6 +8,7 @@
     "currency": "USD"
   },
   "turnaround_time": {},
+  "loan_id": "12345",
   "permissible_purpose": "credit-application",
   "target": {
     "first_name": "Joe",

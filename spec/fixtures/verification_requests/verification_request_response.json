@@ -11,6 +11,7 @@
     "upper_bound": "42",
     "lower_bound": "23"
   },
+  "loan_id": "12345",
   "permissible_purpose": "credit-application",
   "target": {
     "first_name": "Joe",

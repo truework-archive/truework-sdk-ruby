@@ -10,6 +10,7 @@
         "currency": "USD"
       },
       "turnaround_time": {},
+      "loan_id": "12345",
       "permissible_purpose": "credit-application",
       "target": {
         "first_name": "John",
@@ -62,6 +63,7 @@
         "currency": "USD"
       },
       "turnaround_time": {},
+      "loan_id": "12345",
       "permissible_purpose": "employment",
       "target": {
         "first_name": "Richard",
@@ -114,6 +116,7 @@
         "currency": "USD"
       },
       "turnaround_time": {},
+      "loan_id": "12345",
       "permissible_purpose": "employment",
       "target": {
         "first_name": "John",
